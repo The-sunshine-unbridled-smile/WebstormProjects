@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>键盘事件</title>
+    <script type="text/javascript">
+        function handle(oEvent) {
+            if (window.event) oEvent = window.event;
+            var oDiv = document.getElementById("display");
+            oDiv.innerHTML += oEvent.type + "<br/>";
+        }
+        window.onload = function () {
+            var oText = document.getElementsByTagName("textarea")[0];
+            oText.onkeydown = handle;
+            oText.onkeyup = handle;
+            oText.onkeypress = handle;
+        }
+
+    </script>
+</head>
+<body>
+<textarea rows="5" cols="50"></textarea>
+<div id="display"></div>
+</body>
+</html>

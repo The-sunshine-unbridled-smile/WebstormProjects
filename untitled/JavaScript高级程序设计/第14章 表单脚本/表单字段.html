@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单字段</title>
+
+</head>
+<body>
+<form method="post" id="myForm">
+<ul>
+    <li><input type="radio" name="color"  value="red">Red </li>
+    <li><input type="radio" name="color"  value="green">Green </li>
+    <li><input type="radio" name="color"  value="blue">Blue </li>
+</ul>
+</form>
+
+
+
+<script type="text/javascript">
+
+    var form=document.getElementById("myForm");
+    /*var colorFields=form.elements["color"];
+    alert(colorFields.length);   //3   返回myForm里的所有color的个数
+    var firstColorField=colorFields[0];
+    var firstFormField=form.elements[0];
+    alert(firstColorField==firstFormField);  //true*/
+
+    var field=form.elements[0];
+    field.value="Another value";  //修改value属性
+    alert(field.form===form);  //true   检查form属性的值
+    field.focus();              //把焦点设置到当前字段
+    field.disabled=true;       //禁用当前字段
+    field.type="checkbox";      //修改type属性
+
+
+
+
+    //以下是避免多次提交表单的方法
+    EventUtil.addHandler(form,"submit",function (event) {
+        event=EventUtil.getEvent(event);
+        var target=EventUtil.getTarget(event);
+        var btn=target.elements["submit-btn"];  //取得提交按钮
+        btn.disabled=true;                       //禁用他
+    });
+
+
+
+    //共有表单字段事件  blur:失去焦点是触发；foucus:获得焦点时触发；
+    // change:对于<input><textarea>元素在失去焦点且value值改变是触发；<select>其选项改变时触发
+    var textbox=document.forms[0].elements[0];
+    EventUtil.addHandler(textbox,"focus",function (event) {
+        event=EventUtil.getEvent(event);
+        var target=EventUtil.getTarget(event);
+        if (target.style.backgroundColor!="red"){
+            target.style.backgroundColor="yellow";
+        }
+    });                   //将文本框背景颜色改为黄色
+
+
+
+</script>
+</body>
+</html>

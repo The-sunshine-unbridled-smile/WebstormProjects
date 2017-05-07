@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>对象的创建</title>
+</head>
+<script type="text/javascript">
+    var person = {
+        "name": "zhangsan",
+        "age": 30,
+        "son": [
+            {
+                "name": "jack",
+                "age": 2
+            },
+            {
+                "name": "rose",
+                "age": 5
+            }
+        ],
+        "info": function () {
+            document.write("父亲的名字：" + this.name + "，年龄：" + this.age + "<br/>");
+            for (var child in this.son) {
+                document.write("儿子的名字：" + this.son[child].name + "，年龄：" + this.son[child].age + "<br/>");
+            }
+        }
+    }
+    person.info();
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位置方法</title>
+    <script type="text/javascript">
+
+        //indexof()从数组的开头开始查找    lastIndexof()从数组的末尾来时查找  返回查找的项在数组中的位置
+        /*var numbers=[1,2,3,4,5,4,3,2,1];
+         alert(numbers.indexOf(3));//2
+         alert(numbers.lastIndexOf(3));//6
+         alert(numbers.indexOf(3,3));//6
+         alert(numbers.lastIndexOf(3,3));//2
+         */
+
+        //
+        var person = {name: "hello"};
+        var people = [{name: "hi"}];
+        var morepeople = [person];
+        alert(people.indexOf(person));//没找到的情况下返回-1
+        alert(morepeople.indexOf(person));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

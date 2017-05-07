@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>对象字面量语法</title>
+    <script type="text/javascript">
+
+
+        function displayInfo(args) {
+            var output="";
+            if(typeof args.name=="string"){
+                output+="Name:"+args.name+"\n";
+            }
+            if(typeof args.age=="number"){
+                output+="Age:"+args.age+"\n";
+            }
+            alert(output);
+        }
+        displayInfo({
+            name:"nicky",
+            age:29
+        });
+        displayInfo({
+            name:"grey"
+        });
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变换</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">hello canvas</canvas>
+
+<script type="text/javascript">
+
+   /* var drawing=document.getElementById("drawing");
+    if(drawing.getContext) {   //确定浏览器是否支持<canvas>元素
+        var context = drawing.getContext("2d");
+        context.beginPath();   //开始路径
+
+        context.arc(100, 100, 99, 0, 2 * Math.PI, false); //绘制外圆
+        context.moveTo(194, 100);
+
+        context.arc(100, 100, 94, 0, 2 * Math.PI, false); //绘制内圆
+
+        context.translate(100,100);  //变换圆点
+
+        context.rotate(1);      //旋转指针1弧度
+
+        context.moveTo(0,0);
+        context.lineTo(0,-85);    //绘制分针
+
+        context.moveTo(0,0);
+        context.lineTo(-65,0);     //绘制时针
+
+        context.stroke();         //描边路径
+    }*/
+
+
+
+
+    var mycanvas=document.getElementById("drawing");
+    if(mycanvas.getContext){
+        var cantext=mycanvas.getContext("2d");
+        cantext.fillStyle="#ff0000";
+        cantext.save();
+
+        cantext.fillStyle="#00ff00";
+        cantext.translate(100,100);
+        cantext.save();
+
+        cantext.fillStyle="#0000ff";
+        cantext.fillRect(0,0,100,200);
+
+        cantext.restore();
+        cantext.fillRect(10,10,100,200);
+        cantext.restore();
+        cantext.fillRect(0,0,100,200);
+
+    }
+
+</script>
+</body>
+</html>

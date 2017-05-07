@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>通用的监听事件</title>
+    <script type="text/javascript">
+        function test1() {
+            alert("绑定HTML元素属性");
+        }
+        function test2() {
+            alert("绑定DOM对象属性");
+        }
+
+    </script>
+</head>
+<body>
+<a href="http://www.baidu.com" onclick="return false">点击我</a>//阻止元素的默认行为
+<input type="button"value="测试1"id="mytest1"onclick="test1()">
+<button type="button"id="test2">测试2</button>
+
+<script type="text/javascript">
+    document.getElementById("test2").onclick=test2;
+</script>
+
+</body>
+</html>

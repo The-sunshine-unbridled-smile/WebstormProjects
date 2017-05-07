@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重排序方法</title>
+    <script type="text/javascript">
+
+
+       /* var a=[1,2,9,6,8];
+        a.reverse();//反转数组想的顺序8,6,9,2,1
+        alert(a);*/
+
+      /* var a=[0,1,5,10,15];
+       a.sort();  //比较的是字符串
+       alert(a);*/
+
+
+       function compare(value1,value2) {
+           if(value1<value2){
+               return -1;
+           }else if(value1>value2){
+               return 1;
+           }else {
+               return 0;
+           }
+       }
+       var values=[0,1,45,10,15];
+       values.sort(compare);
+       alert(values);//按升序排列   交换return -1与return 1的位置后将按降序排列
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

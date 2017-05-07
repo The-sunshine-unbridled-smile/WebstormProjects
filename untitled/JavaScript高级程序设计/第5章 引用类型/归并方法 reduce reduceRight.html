@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>归并方法</title>
+    <script type="text/javascript">
+
+        //reduce是从头开始遍历数组
+        var values = [1, 2, 3];
+        var sum = values.reduce(function (prev, cur, index, array) {
+            return prev + cur;
+        });
+        alert(sum);
+
+        //reduceRight是从最后一项开始遍历数组
+        var values = [1, 2, 3];
+        var sum = values.reduceRight(function (prev, cur, index, array) {
+            return prev + cur;
+        });
+        alert(sum);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

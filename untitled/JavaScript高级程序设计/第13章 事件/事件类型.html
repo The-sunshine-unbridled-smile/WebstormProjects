@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件类型</title>
+
+    <script type="text/javascript">
+
+        // 1：UI事件；
+        //load;unload;abort;error;select;resize;scroll;用法
+        //load
+       /* EventUtil.addHander(window,"load",function () {
+            var link=document.createElement("link");
+            link.type="text/css";
+            link.rel="stylesheet";
+            EventUtil.addHander(link,"load",function (event) {
+                alert("css loaded");
+            });
+            link.href="example.css";
+            document.getElementsByTagName("head")[0].appendChild(link);
+        });*/
+
+
+
+        //  2：焦点事件
+        //blur:元素失去焦点是触发；focusout元素失去焦点时触发；
+        // DOMFocusIn:元素获得焦点时触发，会冒泡,只有Opera支持；
+        // focus元素获得焦点时触发，不会冒泡；focusin元素获得焦点时触发，会冒泡；
+
+
+        //  3:鼠标与滚轮事件
+        //click:单击鼠标触发；dblclick:双击鼠标触发；mousedown:按下任意鼠标按钮触发；
+        // mouseenter:在鼠标光标首次移动到元素范围内触发；mouseleave:移到元素外部触发；
+        // mousemove:鼠标在元素内部时重复触发；mouseout:鼠标移到另一个元素时触发；
+        // mouseover:鼠标在元素外部移到另一个元素的边界触发；mouseup:释放鼠标按钮时触发
+        /*function handle(oEvent) {
+            if (window.event) oEvent = window.event;
+            var oDiv = document.getElementById("display");
+            oDiv.innerHTML += oEvent.type + "<br/>";
+        }
+        window.onload = function () {
+            var oImg = document.getElementsByTagName("img")[0];
+            oImg.onmousedown = handle;//单击任意一个鼠标键触发
+            oImg.onmouseout = handle;//鼠标移出是触发
+            oImg.onmouseup = handle;//松开鼠标任意按键时触发
+            oImg.onmouseover = handle;//鼠标移上去时触发
+            oImg.ondblclick = handle;//双击时触发
+
+        }*/
+
+
+
+        //  4:键盘与文本事件
+        //keydown:按下键盘上任意键时触发；keypress:按下字符键时触发；keyuo:释放键盘上的键时触发
+        /*function handle(oEvent) {
+            if (window.event) oEvent = window.event;
+            var oDiv = document.getElementById("mydiv");
+            oDiv.innerHTML += oEvent.type + "<br/>";
+        }
+        window.onload = function () {
+            var oText = document.getElementsByTagName("textarea")[0];
+            oText.onkeydown = handle;
+            oText.onkeyup = handle;
+            oText.onkeypress = handle;
+        }*/
+
+
+
+
+        //  5：复合事件:使用如下
+       /* var textbox=document.getElementById("mytext");
+        EventUtil.addHander(textbox,"compositionstart",function (event) {
+            event=EventUtil.getEvent(event);
+            alert(event.data);
+        });
+        EventUtil.addHander(textbox,"compositionupdate",function (event) {
+            event=EventUtil.getEvent(event);
+            alert(event.data);
+        });
+        EventUtil.addHander(textbox,"compositionend",function (event) {
+            event=EventUtil.getEvent(event);
+            alert(event.data);
+        });
+
+        //确定浏览器是否支持复合事件
+        var isSupported=document.implementation.hasFeature("CompositionEvent","3.0");*/
+
+
+
+
+
+       //  6:变动事件
+        //确定浏览器是否支持复合事件
+        //var isSupported=document.implementation.hasFeature("MutationEvents","2.0");
+
+
+
+
+        //  7:HTML5事件
+        //contextmenu事件
+
+    </script>
+
+</head>
+<body>
+
+<img src="tu7.jpg" border="0" style="float: left;padding: 0px 8px 0px 0px;">
+<div id="display">  这是鼠标事件</div>
+
+
+<textarea rows="5" cols="50">这是键盘事件</textarea>
+<div id="mydiv"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location对象</title>
+    <script type="text/javascript">
+
+        //查询字符串参数
+       /* function getQuer() {
+            var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
+                args = {"?q=javascript"&"num=10"},
+                items = qs.length ? qs.split("&") : [],
+                item = null,
+                name = null,
+                value = null,
+                i = 0,
+                len = items.length;
+            for (i = 0; i < len; i++) {
+                item = items[i].split("=");
+                name = decodeURIComponent(item[0]);
+                value = decodeURIComponent(item[1]);
+                if (name.length) {
+                    args[name] = value;
+                }
+            }
+            return args;
+        }
+
+        var args = getQuer();
+        alert(args["q"]);
+        alert(args["num"]);*/
+
+
+
+       //位置操作assign()
+        //replace()在调用该方法后，不能回到前一个页面
+        //reload()重新加载当前显示的页面
+
+
+    </script>
+</head>
+<body>
+
+<p>
+    enjoy this page
+</p>
+<script type="text/javascript">
+    setTimeout(function () {
+        location.replace("http://.baidu.com");
+    },1000);
+    location.reload(true);
+</script>
+</body>
+</html>

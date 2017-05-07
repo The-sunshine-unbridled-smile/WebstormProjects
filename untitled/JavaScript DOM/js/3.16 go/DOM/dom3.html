@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>访问表格子元素</title>
+    <script type="text/javascript">
+        function updateCell() {
+            var row=document.getElementById("row").value;
+            var cell=document.getElementById("cel").value;
+            var t=document.getElementById("mytable");
+            //t.rows[row-1].cells[cell-1].innerHTML=document.getElementById("course").value;
+            t.rows.item(row-1).cells.item(cell-1).innerHTML=document.getElementById("course").value;
+        }
+    </script>
+</head>
+<body>
+<table id="mytable" border="1">
+    <caption>加油练习</caption>
+    <tr>
+        <td>c</td>
+        <td>c++</td>
+    </tr>
+    <tr>
+        <td>java</td>
+        <td>html</td>
+    </tr>
+    <tr>
+        <td>style</td>
+        <td>comeon</td>
+    </tr>
+</table>
+<input type="button"value="表格标题"
+       onclick="alert(document.getElementById('mytable').caption.innerHTML)">
+<input type="button"value="第一行，第一列"
+       onclick="alert(document.getElementById('mytable').rows[0].cells[0].innerHTML)">
+<input type="button"value="第二行，第二列"
+       onclick="alert(document.getElementById('mytable').rows[1].cells[1].innerHTML)">
+<input type="button"value="第三行，第一列"
+       onclick="alert(document.getElementById('mytable').rows[2].cells[0].innerHTML)">
+<br>
+设置表格里的值
+第<input type="text"id="row"size="2">行
+第<input type="text"id="cel"size="2">列的值为
+<input type="text"id="course"size="10">
+<input type="button"id="btn_set"value="修改"onclick="updateCell()">
+</body>
+</html>

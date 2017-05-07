@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>html事件</title>
+</head>
+<body onload="alert('hello')" onunload="alert('byebye')">
+onunload事件类型只有IE才支持
+<br>
+<form action="http://www.baidu.com" onsubmit="alert('提交啦')">
+    <input type="text" value="a" onfocus="alert('获得焦点')" onblur="alert('失去焦点')"/>
+    <input type="text" value="b" onchange="alert('内容改变了')" onselect="alert('内容选中啦')"/>
+    <input type="submit"value="提交">
+</form>
+</body>
+</html>

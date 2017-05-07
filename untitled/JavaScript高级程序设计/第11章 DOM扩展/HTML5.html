@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5</title>
+
+    <script type="text/javascript">
+
+        //getElementsByClassName():接收一个参数，一个包含一个或多个类名的字符串，类名的先后顺序无所谓
+        //classList属性：
+        //document.hasFocus()：用于确定文档是否获得了焦点
+        var button=document.getElementById("mybutton");
+        button.focus();
+        alert(document.hasFocus());
+
+
+
+
+        </script>
+
+
+</head>
+<body>
+
+<div class="example">
+    <p>P 元素在在第一个样式为 class="example" 的 Div 元素中。Div 的索引值为 0。</p>
+</div>
+<div class="example color">
+    <p>P 元素在在第一个样式为 class="example color" 的 Div 元素中。Div 的索引值为 0。</p>
+</div>
+<div class="example color">
+    <p>P 元素在在第二个样式为 class="example color" 的 Div 元素中。Div 的索引值为 1。</p>
+</div>
+<p>点击按钮修改第一个类为 "example" 的 div 元素的背景颜色。</p>
+<button onclick="myFunction()">点我</button>
+<p><strong>注意:</strong> Internet Explorer 8 及更早 IE 版本不支持 getElementsByClassName() 方法。</p>
+
+
+
+
+<script>
+    function myFunction() {
+        var x = document.getElementsByClassName("example color");
+        x[1].style.backgroundColor = "red";
+    }
+</script>
+
+</body>
+</html>

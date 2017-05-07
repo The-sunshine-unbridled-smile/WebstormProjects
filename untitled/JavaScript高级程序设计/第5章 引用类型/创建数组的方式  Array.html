@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建数组</title>
+    <script type="text/javascript">
+
+        var colors=["red","blue","black"];
+        colors.length=2;//将长度设为2会移除最后一项  undefined
+        alert(colors[2]);
+
+        var colors=["red","blue","black"];
+        colors.length=4;//将长度设为4 最后一项不存在 undefined
+        alert(colors[3]);
+
+
+        var colors=["red","blue","black"];
+        colors[colors.length]="gray";
+        colors[colors.length]="green";//新增了两项
+        alert(colors[4]);
+
+
+        var colors=["red","blue","black"];
+        colors[99]="pink";//在位置99添加一种颜色  长度为100了
+        alert(colors.length);
+
+
+
+    </script>
+</head>
+<body>
+<dl>
+    <dt>创建数组的方式</dt>
+    <dd>1：使用new Array  例：var colors=new Array(10)//创建一个长度为10的数组，也可以不要new效果一样</dd>
+    <dd>2：使用数组字面量表示法  例：var colors=["red","blue","black"]创建一个包括3个字符串的数组</dd>
+</dl>
+
+</body>
+</html>

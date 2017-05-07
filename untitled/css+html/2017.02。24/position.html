@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            margin:0px;
+            padding:0px;
+        }
+       #test1{
+            width:500px;
+            height:500px;
+            background: #4fff27;
+
+        }
+        #p1{
+            width:100px;
+            height:100px;
+            background: #ffed24;
+            position:relative;/*相对定位  即相对于自身的定位 且其他的元素不会挤到他原来的位置*/
+            top:10px;
+            left: 10px;
+        }
+        #p2{
+            width:100px;
+            height:100px;
+            background: #34ffd0;
+        }
+        #test2{
+            width:500px;
+            height:500px;
+            background:goldenrod;
+            margin-top:20px;
+            position:relative;
+        }
+        #p3{
+            width: 100px;
+            height:100px;
+            background: pink;
+            position:absolute;
+            top:30px;
+            left:30px;
+            z-index: 100;
+            /*1：绝对定位是指相对于父元素的top left right bottom来定位的
+                而且不占父元素里其他元素的位置 只是飞在上面
+              2：用绝对定位时，父元素有position属性才行，如果没有将依据父的父....body
+               3：哪个祖先有position 属性就相对于谁，若都没有则相对于body*/
+
+        }
+        #p4{
+            width:100px;
+            height:100px;
+            background: #3640ff;
+            position:absolute;
+            top:20px;
+            left:20px;
+        }
+        /*当有两个设置绝对位置时 后面的会盖住前面的
+        但是通过z-index:10设置谁飞的高 谁的值越大谁就飞的更高*/
+    </style>
+</head>
+<body>
+<div id="test1">
+    <p id="p1">相对定位</p>
+    <p id="p2">相对定位</p>
+</div>
+<div id="test2">
+    你下次世界的覅偶实在你吃啥都发生那<br>
+    你下次世界的覅偶实在你吃啥都发生那<br>
+    你下次世界的覅偶实在你吃啥都发生那<br>
+    你下次世界的覅偶实在你吃啥都发生那<br>
+    次搜的父爱我尺深度费用你的肤色你非要充分舒服一点报复对方
+    <p id="p3"></p>
+    <p id="p4"></p>
+
+</div>
+
+</body>
+</html>

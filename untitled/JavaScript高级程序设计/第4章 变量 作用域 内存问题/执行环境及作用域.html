@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>执行环境及作用域</title>
+    <script type="text/javascript">
+
+        /* var color="blue";
+         function changcolor() {
+         if(color==="blue"){
+         color="red";
+         }else {
+         color="blue";
+         }
+         }
+         changcolor();
+         alert(color);//red*/
+
+
+        //局部作用域和全局的访问
+        var color = "blue";
+        function changColor() {
+            var anothercolor = "red";
+
+            function swapColor() {
+                var tempcolor = anothercolor;
+                anothercolor = color;
+                color = tempcolor;
+                alert(tempcolor);//这里可访问 color  anothercolor   tempcolor
+            }
+
+            alert(anothercolor);//这里可访问 color  anothercolor
+            swapColor();
+
+        }
+        alert(color);//这里只可访问 color
+        changColor();
+
+
+
+        with(lo)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本用法</title>
+    <style>
+       /* #mycanvas{
+            background-color: #00cc00;
+        }*/
+    </style>
+</head>
+<body>
+
+<canvas id="mycanvas" width="200" height="200">hello canvas</canvas>
+
+<script type="text/javascript">
+
+    var mycanvas=document.getElementById("mycanvas");
+    if(mycanvas.getContext){
+        var cantext=mycanvas.getContext("2d");
+        cantext.fillStyle="#ff0000";
+        cantext.fillRect(10,10,50,50);//绘制红色矩形
+
+        cantext.fillStyle="rgba(0,0,255,0.5)";
+        cantext.fillRect(30,30,50,50); //绘制半透明蓝色矩形
+        cantext.clearRect(40,40,10,10);//清除矩形区域
+
+        cantext.strokeStyle="black";
+        cantext.strokeRect(10,10,50,50);//绘制黑色边
+    }
+
+</script>
+
+</body>
+</html>

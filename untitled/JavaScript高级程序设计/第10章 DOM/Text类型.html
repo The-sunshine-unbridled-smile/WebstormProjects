@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text类型</title>
+    <script type="text/javascript">
+
+        var element=document.createElement("div");
+        element.className="message";
+        var textNode=document.createTextNode("hello word");
+        element.appendChild(textNode);
+        //document.body.appendChild(element);
+        alert(element.firstChild.nodeValue);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

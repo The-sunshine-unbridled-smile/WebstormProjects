@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>创建元素 复制 删除</title>
+    <script type="text/javascript">
+        function create() {
+            var city=document.getElementById("city");
+            var element=document.createElement("li");
+            element.innerHTML="南京"
+            //city.appendChild(element);
+            //city.insertBefore(element,city.firstChild.nextSibling);
+            city.replaceChild(element,city.firstChild.nextSibling);
+        }
+        function copy() {
+            var city=document.getElementById("city");
+            var element=city.firstChild.nextSibling.cloneNode(true);
+            city.appendChild(element);
+        }
+        function cel() {
+            var city=document.getElementById("city");
+            var element=city.firstChild.nextSibling;
+            city.removeChild(element);
+        }
+    </script>
+</head>
+<body>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+</ul>
+<input type="button"value="创建替换节点"onclick="create()">
+<input type="button"value="复制节点"onclick="copy()">
+<input type="button"value="删除节点"onclick="cel()">
+
+</body>
+</html>

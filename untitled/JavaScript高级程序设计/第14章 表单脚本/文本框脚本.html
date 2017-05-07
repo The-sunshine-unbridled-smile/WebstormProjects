@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框脚本</title>
+</head>
+<body>
+
+<form method="post" id="myForm">
+    <ul>
+        <li><input type="radio" name="color"  value="red">Red </li>
+        <li><input type="radio" name="color"  value="green">Green </li>
+        <li><input type="radio" name="color"  value="blue">Blue </li>
+    </ul>
+</form>
+
+<script type="text/javascript">
+    //选择文本select();在调用select()方法时会触发select事件
+    /*var textbox=document.forms[0].elements["texybox1"];
+    EventUtil.addHandler(textbox,"select",function (event) {
+        alert("Text select"+textbox.value);
+    });*/
+
+    textbox.value="hello world";
+    var range=textbox.createTextRange();
+    function selectText(textbox,startIndex,stopIndex) {
+        if(textbox.setSelectionRange){
+            textbox.setSelectionRange(startIndex,stopIndex); //测试文本框是否包含setSelectionRange方法，如果有则使用该方法
+        }else if(textbox.createTextRange){
+            range.collapse(true);
+            range.moveStart("character",startIndex);
+            range.moveEnd("character",stopIndex-startIndex);
+            range.select();
+        }   //若没有则检测是否支持createTextRange方法，若有则通过创建范围来实现选择
+        textbox.focus();
+    }
+
+
+</script>
+
+
+</body>
+</html>

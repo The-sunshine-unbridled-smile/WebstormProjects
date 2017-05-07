@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">hello canvas</canvas>
+
+
+<script type="text/javascript">
+
+    var drawing=document.getElementById("drawing");
+    if(drawing.getContext){   //确定浏览器是否支持<canvas>元素
+        var context=drawing.getContext("2d");
+
+
+        //var gradient=context.createLinearGradient(30,30,70,70);//创建新的线性渐变
+        var gradient=context.createRadialGradient(55,55,10,55,55,30);  //圆形渐变
+        gradient.addColorStop(0,"white");
+        gradient.addColorStop(1,"black");
+
+        context.fillStyle="#ff0000";
+        context.fillRect(10,10,50,50);
+
+        context.fillStyle=gradient;
+        context.fillRect(30,30,50,50); //绘制渐变矩形
+
+    }
+
+</script>
+</body>
+</html>

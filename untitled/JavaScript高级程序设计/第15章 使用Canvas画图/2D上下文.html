@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2D上下文</title>
+    <style>
+        /* #drawing{
+             background-color: #00cc00;
+         }*/
+    </style>
+</head>
+<body>
+
+<canvas id="drawing" width="200" height="200">hello canvas</canvas>
+
+
+<script type="text/javascript">
+
+    var drawing=document.getElementById("drawing");
+    if(drawing.getContext){   //确定浏览器是否支持<canvas>元素
+        var context=drawing.getContext("2d");
+        //绘制路径
+        context.beginPath();   //开始路径
+        context.arc(100,100,99,0,2*Math.PI,false); //绘制外圆
+        context.moveTo(194,100);
+        context.arc(100,100,94,0,2*Math.PI,false); //绘制内圆
+        context.moveTo(100,100);
+        context.lineTo(100,15);   //绘制分针
+        context.moveTo(100,100);
+        context.lineTo(35,100);    //绘制时针
+        context.stroke();         //描边路径
+
+
+        //绘制文本
+        context.font="blod 14px Arial";
+        context.textAlign="center";
+        context.textBaseline="middle";
+        context.fillText("12",100,10);
+
+        context.textAlign="start";    //起点对其
+        context.fillText("12",100,40);
+
+        context.textAlign="end";      //终点对齐
+        context.fillText("12",100,60);
+
+
+
+        //计算指定文本的大小
+        var fontsize=100;
+        context.font=fontsize+"px Arial";
+        while (context.measureText("hello world").width>140){
+            fontsize--;
+            context.font=fontsize+"px Arial";
+        }
+        context.fillText("hello world",10,20)
+        context.fillText("Font size is "+fontsize+"px",10,50);
+    }
+
+
+</script>
+
+</body>
+</html>

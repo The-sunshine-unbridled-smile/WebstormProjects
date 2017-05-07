@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>IE监听事件</title>
+    <script type="text/javascript">
+        function show() {
+            alert("hello IE")
+        }
+        window.onload=function () {
+            document.getElementById("test1").attachEvent("onclick",show);
+            document.getElementById("test2").onclick=function () {
+                document.getElementById("test1").detachEvent("onclick",show);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input type="button"value="测试1"id="test1">
+<button type="button" id="test2">测试2</button>
+
+</body>
+</html>

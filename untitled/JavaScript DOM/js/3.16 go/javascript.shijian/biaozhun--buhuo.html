@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>标准事件流（捕获型事件）</title>
+    <script type="text/javascript">
+
+        function show(sText) {
+            var oDiv=document.getElementById("display");
+            oDiv.innerHTML+=sText;
+        }
+        window.onload=function () {
+            var mybody=document.getElementById("mybody");
+            var mydiv=document.getElementById("mydiv");
+            var myp=document.getElementById("myp");
+            mybody.addEventListener("click",function () {show('body<br/>')},true);
+            mydiv.addEventListener("click",function () {show('div<br/>')},true);
+            myp.addEventListener("click",function () {show('p<br/>')},true);//把true换为false则为冒泡型事件流
+        }
+
+    </script>
+</head>
+<body id="mybody">
+<div id="mydiv">
+    <p id="myp">click me</p>
+</div>
+<div id="display"></div>
+</body>
+</html>

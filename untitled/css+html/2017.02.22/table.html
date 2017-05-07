@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <style>
+        td {
+            border: 1px solid blue; /*用css怎么控制td里的字的位置*/
+
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse; /*破裂融合.....separate独立*/
+            /*border-spacing:20px; 格子之间的间距*/
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>12</td>
+        <td>22</td>
+        <td>33</td>
+
+    </tr>
+    <tr>
+        <td>44</td>
+        <td>55</td>
+        <td>66</td>
+
+    </tr>
+</table>
+<table width="600px" height="400px" align="center">
+    <tr>
+        <td>向上居中</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td rowspan="2">上午</td>
+        <td>语文</td>
+        <td>地理</td>
+        <td>袋鼠</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>语文</td>
+        <td>语文</td>
+        <td>语文</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="6"></td>
+    </tr>
+    <tr>
+        <td rowspan="2"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+</body>
+</html>

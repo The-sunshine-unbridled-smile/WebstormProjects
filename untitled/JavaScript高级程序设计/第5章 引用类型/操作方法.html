@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作方法</title>
+    <script type="text/javascript">
+
+        //concat()方法 创建一个新数组
+       /* var colors=["red","blue","green"];
+        var colors2=colors.concat("yellow",["black","pink"]);
+        alert(colors2);*/
+
+
+       //slice()方法
+        /*var colors=["red","blue","green","black","pink"];
+        var colors2=colors.slice(1);//从位置1开始复制
+        var colors3=colors.slice(1,4);//从位置1开始到位置3结束
+        alert(colors2);
+        alert(colors3);*/
+
+
+        //splice()方法
+       /* var colors=["red","blue","green"];
+        var removed=colors.splice(0,1);//"0"要删除的位置 “1”要删除的项数
+        alert(colors);//blue green
+        alert(removed);//red*/
+
+       /* var colors=["red","blue","green"];
+        var removed=colors.splice(1,0,"yellow","orange");//从位置1开始并且插入两项
+        alert(colors);//red yellow orange blue green
+        alert(removed);*/
+
+        var colors=["red","blue","green"];
+        var removed=colors.splice(2,1,"yellow","orange");//删除位置2的项并且从位置2开始插入
+        alert(colors);//red blue yellow orange
+        alert(removed);//green
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

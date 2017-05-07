@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+    <script type="text/javascript">
+
+        //闭包：是指有权访问另一个函数作用域中变量的函数。创建闭包常见的方式就是在一个函数的内部创建另一个函数
+
+        //闭包与变量
+        //这里的每个函数内部i的值都是10,即闭包只能取得包含函数中任何变量的最后一个值
+        /*function createFunctions() {
+            var result = new Array();
+            for (var i = 0; i < 10; i++) {
+                result[i] = function () {
+                    return i;
+                };
+            }
+            return result;
+        }*/
+
+
+        //这里的每个函数都可以返回不同的值
+       /* function createFunctions() {
+            var result = new Array();
+            for (var i = 0; i < 10; i++) {
+                result[i] = function (num) {
+                    return function () {
+                        return num;
+                    };
+                }(i);
+            }
+            return result;
+        }*/
+
+
+
+
+       //关于this对象
+       /* var name="the window";
+        var object={
+            name:"my object",
+            getNameFunc:function () {
+                return function () {
+                    return this.name;    //this访问的是全局变量中的name
+                };
+            }
+        };
+        alert(object.getNameFunc()());      //the window*/
+
+        /*var name="the window";
+        var object={
+            name:"my object",
+            getNameFunc:function () {
+               var that=this;           //把this对象赋值给变量that
+               return function () {
+                   return that.name;
+               };
+            }
+        };
+        alert(object.getNameFunc()());    //my object*/
+
+
+
+
+
+        //模仿块级作用域
+      /* function outputNumbers(count) {
+            for(var i=0;i<count;i++){
+                alert(i);
+            }
+            alert(i);
+        }
+        outputNumbers(5);*/
+
+       /* (function () {
+          //这里是块级作用域  最外面的（）表示它实际上是一个函数表达式，function 后面的()会立即调用这个函数
+      })();
+
+        var someFunction=function () {
+            //这里是块级作用域
+        };
+        someFunction();*/
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

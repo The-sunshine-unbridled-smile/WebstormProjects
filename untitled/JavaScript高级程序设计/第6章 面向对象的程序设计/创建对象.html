@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+    <script type="text/javascript">
+
+        //构造函数模式
+
+        /* function Person(name,age,job) {
+         this.name=name;
+         this.age=age;
+         this.job=job;
+         this.sayName=function () {
+         alert(this.name);
+         };
+         }
+         var person1=new Person("Nicklos",29,"teacher");
+         var person2=new Person("rose",24,"Doctor");
+         alert(person1.constructor==Person);   //true
+         alert(person2.constructor==Person);   //true    constructor(构造函数)属性
+         alert(person1 instanceof Object);       //true
+         alert(person1 instanceof Person);       //true
+         alert(person2 instanceof Object);       //true
+         alert(person2 instanceof Person);       //true*/
+
+
+
+        //原型模式
+        //hasOwnProperty()检测一个属性是否存在于实例中 存在返回true
+        //hasPrototypeProperty()检测一个属性是否存在于原型中 存在返回true
+        //in操作符只要通过对象能访问到属性就返回true
+        /*function Person() {
+         }
+         Person.prototype.name = "nick";
+         Person.prototype.age = 29;
+         Person.prototype.job = "doctor";
+         Person.prototype.sayName = function () {
+         alert(this.name);
+         };
+         var person1 = new Person();
+         var person2 = new Person();
+
+         alert(person1.hasOwnProperty("name"));  //false  hasOwnProperty()检测一个属性是否存在于实例中
+         alert("name" in person1);    //true
+
+         person1.name = "rose";
+         alert(person1.name);  // rose来自实例
+         alert(person1.hasOwnProperty("name"));  //true
+         alert("name" in person1);    //true
+
+         alert(person2.name);   //nick来自原型
+         alert(person1.hasOwnProperty("name"));  //false
+         alert("name" in person2);    //true
+
+         delete person1.name;
+         alert(person1.name);  //nick来自原型  使用delete操作符可以完全删除实例属性
+         alert(person1.hasOwnProperty("name"));  //false
+         alert("name" in person1);    //true*/
+
+        //object.keys()和object.getOwnPropertyName都可以用来代替for-in循环
+        /*function Person() {
+         }
+         Person.prototype.name = "nick";
+         Person.prototype.age = 29;
+         Person.prototype.job = "doctor";
+         Person.prototype.sayName = function () {
+         alert(this.name);
+         };
+         var keys=Object.keys(Person.prototype);
+         alert(keys);             //name,age,job,sayName
+         var p1=new Person();
+         p1.name="rob";
+         p1.age=13;
+         var p1keys=Object.keys(p1);     //Object.keys取得对象上所有可枚举的实例属性
+         alert(p1keys);              //name,age,
+
+         var keys=Object.getOwnPropertyNames(Person.prototype);
+         alert(keys);            //constructor,name,age,job,sayName
+         //getOwnPropertyNames取得对象上所有的实例属性   无论它是否可枚举*/
+
+
+        //组合使用构造函数模式和原型模式
+        /*function Person(name, age, job) {
+         this.name = name;
+         this.age = age;
+         this.job = job;
+         this.friends = ["shely", "court"];
+         }
+         Person.prototype = {
+         constructor: Person,
+         sayName: function () {
+         alert(this.name);
+         }
+         }
+         var person1=new Person("NICK",29,"doctor");
+         var person2=new Person("rose",27,"teacher");
+         person1.friends.push("van");
+         alert(person1.friends);                         //shely,court,van
+         alert(person2.friends);                        //shely,court,
+         alert(person1.friends===person2.friends);    //false
+         alert(person1.sayName===person2.sayName);      //true*/
+
+
+
+        //寄生构造函数模式(在可以使用其他模式的情况下，尽量不要使用这种模式)
+        /*function SpecialArray() {
+         var values = new Array();             //创建数组
+         values.push.apply(values, arguments);  //添加值
+         values.toPipedString = function () {   //添加方法
+         return this.join(" | ");
+         };
+         return values;                         //返回数组
+         }
+         var colors=new SpecialArray("red","blue","green");
+         alert(colors.toPipedString());      //red|blue|green*/
+
+
+
+        //稳妥构造函数模式
+        //稳妥对象：没有公共属性，而且其方法也不引用this的对象。
+        function Person(name, age, job) {
+            var o = new Object();
+            o.sayName = function () {
+                alert(name);
+            };
+            return o;
+        }
+        var friend = Person("nick", 29, "doctor");
+        friend.sayName();                //nick
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

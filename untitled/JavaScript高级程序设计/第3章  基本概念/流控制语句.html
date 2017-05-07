@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>流控制语句</title>
+    <script type="text/javascript">
+
+
+        //if语句
+        /*var i = 11;
+         if (i > 25) {
+         alert("greater than 25");
+         } else if (i < 0) {
+         alert("less than 0");
+         } else {
+         alert("between 0 and 25");
+         }
+         */
+
+
+
+        //do while语句 条件不满足才弹窗
+         var i =0;
+         do {
+         i += 2;
+         } while (i < 10);
+         alert(i);
+
+
+
+
+        //while语句
+         /*var i=0;
+         while (i<10){
+         i+=2;
+         alert(i);
+         }*/
+
+
+
+        //for语句
+        /* var count=10;
+         for(var i=0;i<count;i++){
+         alert(i);
+         }*/
+        /*var count=10;
+         var i=0;
+         for(;i<count;){
+         alert(i);
+         i++;
+         }*/
+
+
+
+        //for in 语句
+        /*for(var propName in window){
+         document.write(propName);
+         }*/
+
+
+
+
+        //break  continue
+        /* var a=0;
+         for(var i=1;i<10;i++){
+         if(i%5==0){
+         continue;//8  如果是break结果为4（表示a++总共执行了4次、8次）
+         }
+         a++;
+         }
+         alert(a);*/
+
+
+        //lable结合使用
+        /*var num=0;
+         outermost:
+         for(var i=0;i<10;i++){
+         for(var j=0;j<10;j++){
+         if(i==5&&j==5){
+         break outermost;//55  如果是continue结果95
+         }
+         num++
+         }
+         }
+         alert(num);*/
+
+
+
+        //switch
+        /*var a=5;
+        switch (true){
+            case a<0:
+                alert("less than 0");
+                break;
+            case a>=0&&a<=10:
+                alert("between 0 and 10");
+                break;
+            default:
+                alert("no that");
+        }*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

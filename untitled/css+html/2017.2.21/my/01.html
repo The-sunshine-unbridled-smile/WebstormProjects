@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #cont{
+            width:1000px;
+            height:600px;
+            background: blueviolet;
+            margin:0px auto;/*auto可以实现父div水平居中 为什么子div实现不了呢？？？*/
+        }
+        #test{
+            width:200px;
+            height:200px;
+            background:red;
+            margin:20px ;
+            float:left;/*加了浮动是子div的margin才是正常的。如果没加浮动那么子div的margin会有所不同 试一下*/
+        }/*再父div和子div中  优先选用子div的margin来布局*/
+    </style>
+</head>
+<body>
+<div id="cont">
+    <div id="test"></div>
+</div>
+
+</body>
+</html>

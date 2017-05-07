@@ -1,0 +1,192 @@
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font: 12px "宋体", "Arial Narrow", HELVETICA;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: #2d374b;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+#cont{
+    margin:0 auto;
+}
+
+#nav li {
+    width:90px;
+    margin-left:1px;
+    float:left;
+}
+#header{
+    height:115px;
+}
+#nav li a{
+    float:left;
+    font-size:16px;
+    width:90px;
+    height:37px;
+    font-family: 微软雅黑 sans-serif;
+    color:gray;
+    text-align:center;
+    background: pink;
+    line-height:37px;
+}
+#nav li a:hover{
+    color:white;
+    background: orange;
+}
+#main{
+    height:490px;
+    width:1000px;
+}
+#lside{
+    height:480px;
+    width:694px;
+    border:1px solid #eee;
+    border-top:none;
+
+    float:left;
+}
+.subtitle{
+    height:37px;
+    background: #eee;
+    margin-top:5px;
+    line-height:37px;
+}
+.subtitle img{
+    float:left;
+    margin-left:10px;
+    margin-top:2px;
+}
+.subtitle h3{
+    float:left;
+}
+.subtitle a{
+    float:right;
+    font-size:12px;
+    color:gray;
+
+
+}
+.four{
+    width:326px;
+    height:200px;
+    background:#eee;
+    float:left;
+    margin:10px;
+}
+.four img{
+    width:150px;
+    height:150px;
+    float:left;
+    margin:10px;
+    padding:6px;
+    background: white;
+}
+.four a{
+    float:left;
+    margin-left:10px;
+    color:gray;
+   
+}
+.four a:visited {
+    color: green;
+}
+
+.four ul {
+    float:left;
+}
+.four li{
+    background: url(xiaoheidian.jpg)no-repeat;
+    padding-left:10px;
+}
+
+
+#rside{
+    height:480px;
+    width:294px;
+
+    float:right;
+
+}
+#art{
+    background: #eee;
+    margin-top:3px;
+}
+#art li{
+
+}
+#art a{
+    background:url(xiaoheidian.jpg) no-repeat;
+    height:30px;
+    display: block;
+    padding-left:20px;
+}
+#art a:hover{
+    background: #fff427;
+}
+#lrt{
+    background: #eee;
+   height:245px;
+    margin-top:1px;
+
+}
+#lrt a{
+    background: url(xiaoheidian.jpg) no-repeat;
+    padding-left:20px;
+    display:block;
+    height:30px;
+
+}
+
+#footer{
+
+    height:120px;
+    width:1000px;
+
+}
+#footer ul{
+    height:30px;
+    background: #eee;
+
+}
+#footer li {
+    float:left;
+    margin-right:10px;
+    margin-top:5px;
+}
+address{
+    margin-top:10px;
+}

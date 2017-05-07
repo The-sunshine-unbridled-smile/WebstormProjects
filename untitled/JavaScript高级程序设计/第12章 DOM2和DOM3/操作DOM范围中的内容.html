@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>操作DOM范围中的内容</title>
+		<script type="text/javascript">
+			
+			var p1=document.getElementById("p1"),
+			 helloNode=p1.firstChild.firstChild,
+			worldNode=p1.lastChild,
+			range=document.createRange();
+			range.setStart(helloNode,2);
+			range.setEnd(worldNode,3);
+			range.deleteContents();
+			
+			
+		</script>
+	</head>
+	<body>
+		
+		<p id="p1">
+			<b>hello</b> world!
+		</p>
+		
+	</body>
+</html>

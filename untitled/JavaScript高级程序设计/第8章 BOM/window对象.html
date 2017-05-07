@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window对象</title>
+    <script type="text/javascript">
+
+        //全局变量不能通过delete操作符删除，而直接在window对象上的定义的属性可以
+        //在下面使用var 添加的window属性有一个名为[[Configurable]]的特性，默认值是false因此不可通过delete操作符删除
+        /*var age=29;
+        window.colors="red";
+        delete window.age;
+        delete window.colors;
+        alert(window.age);     //29
+        alert(window.colors);  //undefined*/
+
+
+        //窗口大小首先将window.innerWidth，window.innerHeight的值分别赋给pageWidth，pageHeight
+        // 然后检查pageWidth中保存的是不是一个数值；
+        // 如果不是则通过检查document.compatMode来确定页面是否处于标准模式
+        // 如果是则分别使用document.documentElement.clientWidth，document.documentElement.clientHeight的值
+        //否则就使用document.body.clientWidth，document.body.clientHeight的值
+        /*var pageWidth=window.innerWidth;
+        var pageHeight=window.innerHeight;
+        if(typeof pageWidth!="number"){
+            if(document.compatMode=="CSS1Compat"){
+                pageWidth=document.documentElement.clientWidth;
+                pageHeight=document.documentElement.clientHeight;
+            }else{
+                pageWidth=document.body.clientWidth;
+                pageHeight=document.body.clientHeight;
+            }
+        }*/
+
+
+        //检测弹出窗口是否被屏蔽
+        /*var blocked=false;
+        try{
+            var wriWin=window.open("http://www.baidu.com","_blank");
+            if(wriWin==null){
+                blocked=true;
+            }
+        }
+        catch (ex){
+            blocked=true;
+        }
+        if (blocked){
+            alert("hello");
+        }*/
+
+
+
+
+        //超时调用setTimeout（）；在指定的时间过后执行代码
+        //clearTimeout()取消超时调用
+        /*var timeoutID=setTimeout(function () {
+            alert("hello word")
+        },1000);
+        clearTimeout(timeoutID);*/
+
+       /* var num=0;
+        var max=10;
+        var intervalID=null;
+        function incrementNumber() {
+            num++;
+            if(num<max){
+                setTimeout(incrementNumber,500);
+            }else {
+                alert("done");
+            }
+        }
+        setTimeout(incrementNumber,500);*/
+
+
+
+        //间歇调用setInterval()：按指定的时间间隔重复执行代码。clearInterval()取消间歇调用
+        //一般不使用间歇调用，使用超时调用来模拟间歇调用时一种最佳模式   如上面的例子所示
+       /* var num=0;
+        var max=10;
+        var intervalID=null;
+        function incrementNumber() {
+            num++;
+            if(num==max){
+                clearInterval(intervalID);
+                alert("done");
+            }
+        }
+        intervalID=setInterval(incrementNumber,500);*/
+
+
+
+
+       //系统对话框alert(),confirm(),prompt()
+        /*alert("hello word");*/
+
+       /* if(confirm("are you sure")){
+            alert("88");
+        }else {
+            alert("hello word");
+        }*/
+
+       var result=prompt("what's your name","hi");
+       if(result!==null){
+           alert("welcome,"+result);
+       }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+
+<!--<frameset  rows="160,*">
+    <frame src="history对象.html"name="topframe">
+    <frameset cols="50%,50%">
+        <frame  src="location对象.html"name="leftframe">
+        <frame src="navigator对象.html"name="rightframe">
+    </frameset>
+</frameset>-->
+
+
+</html>

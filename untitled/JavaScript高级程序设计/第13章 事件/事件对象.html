@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件对象</title>
+		
+		<script type="text/javascript">
+			
+			var btn=document.getElementById("mybtn");
+			/*btn.onclick=function(event){
+				alert("clicked");
+				event.stopPropagation();
+			};
+			document.body.onclick=function(event){
+				alert("body clicked");
+			};*/
+			
+			
+			btn.onclick=function(event){
+				alert(event.eventPhase);
+			};
+			document.body.addEventListener("click",function(event){
+				alert(event.eventPhase);
+			},true);
+			document.body.onclick=function(event){
+				alert(event.eventPhase);
+			};
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<input type="button" value="click me" id="mybtn" />
+	</body>
+</html>

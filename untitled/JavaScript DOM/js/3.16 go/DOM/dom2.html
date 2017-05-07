@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>查找下拉菜单控件</title>
+</head>
+<body>
+<select id="city" name="city" size="5">
+    <option value="beijing">北京</option>
+    <option value="shanghai" selected="selected">上海</option>
+    <option value="xinjiang">新疆</option>
+    <option value="shenzhen">深圳</option>
+    <option value="wuhan">武汉</option>
+    <option value="xizang">西藏</option>
+</select>
+<br>
+<input type="button" value="第一个城市" onclick="change(s_city.options[0])">
+<input type="button" value="上一个城市"
+       onclick="change(s_city.options[s_city.selectedIndex-1])">
+<input type="button" value="下一个城市"
+       onclick="change(s_city.options[s_city.selectedIndex+1])">
+<input type="button" value="最后一个城市"onclick="change(s_city.options[s_city.length-1])">
+
+
+<script type="text/javascript">
+    var s_city = document.getElementById("city");
+    var change = function (city) {
+        alert(city.value);
+    }
+</script>
+
+</body>
+</html>

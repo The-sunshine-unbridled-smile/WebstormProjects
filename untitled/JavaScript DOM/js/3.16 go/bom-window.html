@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <script type="text/javascript">
+        function testConfirm() {
+            var answer = window.confirm("是否退出")
+            if (answer) {
+                window.alert("88");
+            } else {
+                window.alert(":-)");
+            }
+        }
+
+
+        function testPrompt() {
+            var res = window.prompt("请输入密码", "123");
+            alert(res);
+        }
+
+        function testMoveBy() {
+            window.moveBy(50, 50);//往右移，往下移
+        }
+
+        function testMoveTo() {
+            window.moveTo(250, 250);//移动到这个位置
+        }
+        function testResizeBy() {
+            window.resizeBy(50, 50);//宽度加50，高度加50
+        }
+        function testResizeTo() {
+            window.resizeTo(350, 350);//宽度为，高度为
+        }
+
+        function testOpen() {
+            window.open("http://www.baidu.com", "baidu", "left=20,top=50,width=300,height=300,");
+        }
+
+
+        //时间
+        var count=0;
+        function showTime() {
+            var d = new Date();
+            hours = d.getHours();
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            minutes = d.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            seconds = d.getSeconds();
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            count++;
+            if(count==10){
+                window.clearInterval(t);//时间停止
+            }
+            document.getElementById("display").innerHTML = hours + ":" + minutes + ":" + seconds;
+        }
+        var t = window.setInterval("showTime()", 1000);
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="confirm" onclick="testConfirm()">
+<br>
+<input type="button" value="prompt" onclick="testPrompt()">
+
+<br>
+<input type="button" value="moveby" onclick="testMoveBy()">
+<br>
+<input type="button" value="moveto      " onclick="testMoveTo()">
+<br>
+<input type="button" value="resizeby" onclick="testResizeBy()">
+<br>
+<input type="button" value="resizeto" onclick="testResizeTo()">
+<br>
+
+<input type="button" value="open" onclick="testOpen()">
+<br>
+<div id="display"></div>
+
+</body>
+</html>

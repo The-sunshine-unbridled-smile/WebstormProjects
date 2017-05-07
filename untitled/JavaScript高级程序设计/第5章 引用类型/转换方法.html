@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转换方法</title>
+    <script type="text/javascript">
+
+        /* var colors=["red","blue","black"];
+         alert(colors.toString());
+         alert(colors.valueOf());
+         alert(colors);//结果都为 red blue black*/
+
+
+
+
+        //toLocaleString()  toString()
+        var person1 = {
+            toLocaleString: function () {
+                return "nike";
+            },
+            toString: function () {
+                return "snike"
+            }
+        };
+        var person2 = {
+            toLocaleString: function () {
+                return "rose"
+            },
+            toString: function () {
+                return "srose"
+            }
+        };
+        var person = [person1, person2];
+        alert(person);                     //snike srose
+        alert(person.toString());         //snike srose
+        alert(person.toLocaleString());  //nike rose
+
+
+
+
+        //join()只接受用作分隔符的字符串
+        var colors = ["red", "blue", "black"];
+        alert(colors.join("||")); //red||blue||black
+
+    </script>
+</head>
+<body>
+<p>
+    所有的对象都具有toLocaleString(),toString(),valueof()方法。
+</p>
+
+</body>
+</html>

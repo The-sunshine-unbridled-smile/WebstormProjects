@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5事件</title>
+
+    <script type="text/javascript">
+
+        //contextmenu事件(上下文菜单)
+        EventUtil.addHandler(div, "load", function (event) {
+            var div=document.getElementById("myDiv");
+            EventUtil.addHandler(div,"contextmenu",function (event) {
+                event=EventUtil.getEvent(event);
+                EventUtill.preventDefault(event);
+                var menu=document.getElementById("myMenu");
+                menu.style.left=event.clientX+"px";
+                menu.style.top=event.clientY+"px";
+                menu.style.visibility="visible";
+            });
+            EventUtil.addHandler(document,"click",function (event) {
+                document.getElementById("myMenu").style.visibility="hidden";
+            });
+        });
+
+
+
+
+
+        //beforeunload事件？（关闭之前）
+        EventUtil.addHandler(window,"beforeunload",function (event) {
+            event=EventUtil.getEvent(event);
+            var message="I'm really going to miss you if you go.";
+            event.returnValue=message;  //先将返回值设置为要显示给用户的字符串
+            return message;
+        });
+
+
+
+
+        //DOMContentLoaded事件（事件）
+
+
+        //readystatechange事件,支持readystatechange事件的每个对象都有一个readystate属性，可能包含以下值中的一个
+        //uninitialized(未初始化)：对象存在但还未初始化；loading（正在加载）；
+        //loaded（加载完毕）；interactive（交互）；complete（完成）；
+
+
+    </script>
+
+</head>
+<body>
+
+<div id="myDiv">right click or ctrl+clickme to get</div>
+<ul id="myMenu" style="position: absolute;visibility: hidden;background-color: silver">
+    <li><a href="http://www.nczonline.net">Nicholas'site</a></li>
+    <li><a href="http://www.wrox.com">Wrox site</a></li>
+    <li><a href="http://www.yahoo.com">Yahoo!</a></li>
+</ul>
+
+</body>
+</html>

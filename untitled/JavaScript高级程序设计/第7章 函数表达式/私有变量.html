@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>私有变量</title>
+    <script type="text/javascript">
+
+        //私有变量：包括函数的参数，局部变量，函数内部定义的其他函数。不能再函数外部访问这些变量
+        //特权方法：有权访问私有变量和私有函数的公有方法
+        //在构造函数中定义特权方法
+        /*function MyObject() {
+         var privateVariable=10;           //私有变量和私有函数
+         function privateFuncyion() {
+         return false;
+         }
+         this.publicMethod=function () {    //特权方法
+         privateVariable++;
+         return privateFuncyion();
+         };
+         }*/
+
+        /*function Person(name) {
+         this.getName=function () {   //这里定义了两个特权方法getName，setName都可以在构造函数外部使用
+         return name;               //而且都有权访问私有变量name
+         };
+         this.setName=function (value) {
+         name=value;
+         };
+         }
+         var person=new Person("nick");
+         alert(person.getName());      //nick
+         person.setName("rose");
+         alert(person.getName());      //rose*/
+
+
+
+        //静态私有变量
+        // Person构造函数与getName(),setName()一样都有权访问私有变量name,
+        // 在这种模式下，变量name就成了一个静态的，由所有实例共享的属性。
+        // 即在一个实例上调用setName()会影响所有实例
+        /*(function () {
+            var name="";
+            Person=function (value) {
+                name=value;
+            };
+            Person.prototype.getName=function () {
+                return name;
+            };
+            Person.prototype.setName=function (value) {
+                name=value;
+            };
+        })();
+        var person1=new Person("nick");
+        alert(person1.getName());         //nick
+        person1.setName("rose");
+        alert(person1.getName());         //rose
+
+        var person2=new  Person("mack");
+        alert(person1.getName());          //mack
+        alert(person2.getName());           //mack*/
+
+
+
+
+        //模块模式:通过对单例添加私有变量和特权方法能够使其得到增强
+        /*var application=function () {
+            var components=new Array();     //首先声明一个私有数组components
+            components.push(new BaseComponent());  //并且向数组中添加BaseComponent的新实例（初始化）
+            //返回对象的getComponentCount（）和registerComponent（）都是有权访问components的特权方法；
+            return{
+                getComponentCount:function () {
+                    return components.length;
+                },
+                registerComponent:function (component) {
+                    if(typeof component=="object"){
+                        components.push(component);
+                    }
+                }
+            };
+        }();*/
+
+
+
+
+         //增强的模块模式
+        var application=function () {
+            var components=new Array();
+            components.push(new BaseComponent());
+            var app=new BaseComponent();
+            app.getComponentCount=function () {
+                return components.length;
+            };
+            app.registerComponent=function (component){
+                if(typeof component=="object"){
+                    components.push(component);
+                }
+            };
+            return app;
+        }();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

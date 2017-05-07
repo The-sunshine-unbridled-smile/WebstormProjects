@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+    <script type="text/javascript">
+        /*  var re=null;
+         i;
+         for(i=0;i<10;i++){
+         re=/cat/g;
+         re.test("catastroghe");
+         }*/
+
+        var text = "mom and dad and baby";
+        var pattern = /mom(and dad(and baby)?)?/gi;
+        var matches = pattern.exec(text);
+        alert(matches.index);//0
+        alert(matches.input);//mom and dad and baby
+        alert(matches[0]);     //mom
+        alert(matches[1]);
+        alert(matches[2]);
+
+
+
+
+       /* var text="this has been a  short summer";
+        var pattern=/(.)hort/g;
+        if(pattern.test(text)){
+            alert(RegExp.input);//this has been a short summer
+            alert(RegExp.leftContext);//this has been a  查找的是short之前的字符串
+            alert(RegExp.rightContext);//summer  查找的是short之后的字符串
+            alert(RegExp.lastMatch);//short  最近一次与整个正则表达式匹配的字符串
+            alert(RegExp.lastParen);//s  最近匹配的捕获组
+        }*/
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

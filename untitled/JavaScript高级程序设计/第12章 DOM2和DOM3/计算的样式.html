@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算的样式</title>
+    <style type="text/css">
+        #mydiv{
+            background-color: blue;
+            width: 100px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+
+<div id="mydiv" style="background-color: red;borde:1px solid black">
+背景颜色不是blue ，因为这个样式自身的style特性已经被覆盖了
+</div>
+
+
+
+<script type="text/javascript">
+    var mydiv=document.getElementById("mydiv");
+    var computedStyle=document.defaultView.getComputedStyle(mydiv,null);
+    alert(computedStyle.backgroundColor);  //rgb(255,0,0)
+    alert(computedStyle.width);              //100px
+    alert(computedStyle.height);             //200px
+    alert(computedStyle.border);             //0px  none rgb(0,0,0)
+</script>
+</body>
+</html>

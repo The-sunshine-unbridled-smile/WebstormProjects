@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+    <script type="text/javascript">
+
+        /*     //原型链（作为实现继承的只要方法）
+         function SuperType() {
+         this.property=true;
+         }
+         SuperType.prototype.getSuperValue=function () {
+         return this.property;
+         };
+         function SubType() {
+         this.subproperty=false;
+         }
+         SubType.prototype=new SuperType();
+         SubType.prototype.getSubValue=function () {
+         return this.subproperty;
+         };
+         var instance=new SubType();
+         alert(instance.getSuperValue());        //true*/
+
+
+
+        //原型链继承
+        /*function Parent() {
+         this.name = 'mike';
+         }
+
+         function Child() {
+         this.age = 12;
+         }
+         Child.prototype = new Parent();//Child继承Parent，通过原型，形成链条
+
+         var test = new Child();
+         alert(test.age);
+         alert(test.name);//得到被继承的属性
+         //继续原型链继承
+         function Brother() {   //brother构造
+         this.weight = 60;
+         }
+         Brother.prototype = new Child();//继续原型链继承
+         var brother = new Brother();
+         alert(brother.name);//继承了Parent和Child,弹出mike
+         alert(brother.age);//弹出12*/
+
+
+
+
+
+        //借用构造函数（类式继承）
+        //例1
+        /*function Parent(age){
+         this.name = ['mike','jack','smith'];
+         this.age = age;
+         }
+
+         function Child(age){
+         Parent.call(this,age);
+         }
+         var test = new Child(21);
+         alert(test.age);//21
+         alert(test.name);//mike,jack,smith
+         test.name.push('bill');
+         alert(test.name);//mike,jack,smith,bill*/
+
+        //例2
+        /*function SuperType() {
+         this.colors=["red","blue","green"];
+         }
+         function SubType() {
+         SuperType.call(this);            //继承了SuperType  （这里用的call()方法）
+         }
+         var instance1=new SuperType();
+         instance1.colors.push("balck");
+         alert(instance1.colors);           //red,blue.green.black
+         var instance2=new SuperType();
+         alert(instance2.colors);            //red,blue.green*/
+
+        //例3  借用构造函数优势：可以在子类型构造函数中向超类型构造函数传递参数()
+        /*function SuperType(name){
+         this.name=name;
+         }
+         function SubType() {
+         SuperType.call(this,"Wdsfadsf");    //继承了SuperType同时传递了参数
+         this.age=25;    //实例属性
+         }
+         var instance=new SubType();
+         alert(instance.name);
+         alert(instance.age);*/
+
+
+
+
+
+        //原型链+借用构造函数=组合继承
+        /*function Parent(age) {
+         this.name = ['mike', 'jack', 'smith'];
+         this.age = age;
+         }
+         Parent.prototype.run = function () {
+         return this.name + ' are both' + this.age;
+         };
+         function Child(age) {
+         Parent.call(this, age);//对象冒充，给超类型传参
+         }
+         Child.prototype = new Parent();//原型链继承
+         var test = new Child(21);//写new Parent(21)也行
+         alert(test.run());//mike,jack,smith are both21*/
+
+
+        //p169
+        /*function SuperType(name) {             //SuperType构造函数定义了两个属性name colors
+         this.name=name;
+         this.colors=["red","blue","green"];
+         }
+         SuperType.prototype.sayName=function () {    //SuperType的原型定义了一个方法sayName()
+         alert(this.name);
+         };
+         function SubType(name,age) {
+         SuperType.call(this.name);        //SubType构造函数在调用SuperType构造函数时传入了name参数
+         this.age=age;                     //又定义了他自己的属性age
+         }
+         SubType.prototype=new SuperType();    //将SuperType的实例复制给了SubType的原型，
+         SubType.prototype.constructor=SubType;
+         SubType.prototype.sayAge=function () {   //并在改实例上定义了新方法sayAge()
+         alert(this.age);
+         };
+         var instance1=new SubType("NICK",29);
+         instance1.colors.push("black");
+         alert(instance1.colors);
+         instance1.sayName();
+         instance1.sayAge();
+
+         var instance2=new SubType("rose",22);
+         alert(instance2.colors);
+         instance2.sayName();
+         instance2.sayAge();*/
+
+
+        //原型式继承
+       /* var person={
+            name:"nick",
+            friends:["shely","court","van"]
+        };
+        var anotherPerson=Object(person);     //在传递一个参数的情况下Object.create()与Object()方法相同
+        anotherPerson.name="grey";
+        anotherPerson.friends.push("rob");
+
+        var yetANotherPerson=Object(person);
+        yetANotherPerson.name="linda";
+        yetANotherPerson.friends.push("barbie");
+        alert(person.friends);     //shely,court,van,rob,barbie*/
+
+        //Object.create()，，以这种方法指定的任何属性都会覆盖原型对象上的同名属性
+       /* var person={
+            name:"nick",
+            friends:["shely","court","van"]
+        };
+        var anotherPerson=Object.create(person,{
+            name:{
+                value:"grey"
+            }
+        });
+        alert(anotherPerson.name);     //grey*/
+
+
+
+       //寄生式继承
+        /*function createAnother(original) {
+            var clone=Object(original);       //通过调用函数创建一个新的对象
+            clone.sayHi=function () {        //为clone对象添加一个新方法sayHi
+                alert("hi");
+            };
+            return clone;                       //返回这个对象
+        }
+        var person={
+            name:"nick",
+            friends:["shely","court","van"]
+        };
+        var anotherPerson=createAnother(person);
+        anotherPerson.sayHi();*/
+
+
+
+
+        //寄生组合式继承：是引用类型最理想的继承范式
+        function inheritPrototype(subType,superType) {
+            var prototype=Object(superType.prototype);  //创建对象
+            prototype.constructor=subType;               //增强对象
+            subType.prototype=prototype;                 //指定对象
+
+        }
+
+
+        function SuperType(name) {
+            this.name=name;
+            this.colors=["red","blue","green"];
+        }
+        SuperType.prototype.sayName=function () {
+            alert(this.name);
+        };
+        function SubType(name,age) {
+            SuperType.call(this.name);
+            this.age=age;
+        }
+        inheritPrototype(SubType,SuperType);
+        SubType.prototype.sayAge=function () {
+            alert(this.age);
+        };
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

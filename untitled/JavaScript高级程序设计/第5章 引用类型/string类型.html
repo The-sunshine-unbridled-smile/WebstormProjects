@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+    <script type="text/javascript">
+
+        //charAt  charCodeAt
+        /*var stringValue = "hello world";
+         alert(stringValue.charAt(1));     //e  得到位置1上的字符
+         alert(stringValue[1]);            //e
+         alert(stringValue.charCodeAt(1)); //101  得到位置1上字符的字符编码*/
+
+        //concat()将一个或多个字符串拼接起来   推荐使用加号操作符
+        /*var stringValue="hello";
+         var result=stringValue.concat(" world"," nihao");
+         alert(result);*/
+
+
+        //slice   substring   substr
+        /*var stringValue = "hello world";
+         alert(stringValue.slice(3));       //lo world
+         alert(stringValue.substring(3));   //lo world
+         alert(stringValue.substr(3));      //lo world  都是从位置3开始访问
+
+         alert(stringValue.slice(3,7));       //lo w
+         alert(stringValue.substring(3,7));   //lo w  从位置3开始带位置6就结束了
+         alert(stringValue.substr(3,7));     //lo worl   这里的7代表的是要返回的字符个数
+
+
+         alert(stringValue.slice(-3));       //rld     -3+11
+         alert(stringValue.substring(-3));   //hello world   substring会把所有的负值转换成0
+         alert(stringValue.substr(-3));      //rld       -3+11
+
+         alert(stringValue.slice(3,-4));       //lo w
+         alert(stringValue.substring(3,-4));   // hel
+         alert(stringValue.substr(3,-4));     // “”  substr会将负的第二个参数转换成0*/
+
+
+        //indexof()从头开始查找    lastindexof()从尾部开始查找
+        /* var stringValue="hello  world  how  are you ege  has special";
+         var position=new Array();
+         var pos=stringValue.indexOf("e");  //首先找到字符串e的初始位置
+         while(pos>-1){
+         position.push(pos);
+         pos=stringValue.indexOf("e",pos+1);
+         }
+         alert(position);*/
+
+
+
+        //trim（）方法会创建一个字符串的副本，删除前置及后缀的所有空格，然后返回结果
+        /*var stringValue="         hello  world";
+         var trimstringValue=stringValue.trim();
+         alert(stringValue);
+         alert(trimstringValue);*/
+
+
+        // 字符串的模式匹配方法match()
+        /*var text="cat,bat,sat,fat";
+         var pattern=/.at/;
+         var matches=text.match(pattern);
+         alert(matches.index);        //0
+         alert(matches[0]);           //cat
+         alert(pattern.lastIndex);   //0*/
+
+        //字符串的模式匹配方法-查找模式search()
+        /* var text="cat,bat,sat,fat";
+         var pos=text.search(/at/);
+         alert(pos);     //1        at第一次出现的位置*/
+
+        //replace()有2个参数  第一个可以是RegExp对象或一个字符创  第二个可以是一个字符串或一个函数
+        /*var text="cat,bat,sat,fat";
+         var result=text.replace("at","ond");
+         alert(result);    //cond,bat,sat,fat只会替换第一个找到的
+         result=text.replace(/at/g,"ond");
+         alert(result);    //cond,bond,sond,fond   指定了全局会替换所有的*/
+
+        /*var text="cat,bat,sat,fat";
+         result=text.replace(/(.at)/g,"word($1)");
+         alert(result);*/
+
+
+        //字符串的模式匹配方法split()
+        /*var color = "red,blue,green,yellow";
+         var color1 = color.split("，");
+         var color2 = color.split(",", 2);
+         var color3 = color.split(/[^\,]+/);
+         alert(color1);
+         alert(color2);
+         alert(color3);*/
+
+
+
+        //localCompare()方法比较两个字符串
+        /*var stringValue="yellow";
+         alert(stringValue.localeCompare("black"));  //1   在black之后返回1
+         alert(stringValue.localeCompare("yellow"));  //0  相同返回0
+         alert(stringValue.localeCompare("zoo"));      //-1  在zoo之前返回-1*/
+
+
+
+        //fromCharCode()方法将字符编码转换为字符串 与charCodeAt()方法相反
+        /*alert(String.fromCharCode(104,101,108,108,111));//hello*/
+
+
+
+        //Global对象(全局对象)
+        //1:编码方法
+        /* var uri="http://www.wro.com/illegal value.htm#start";
+         alert(encodeURI(uri));          //不会对特殊字符进行编码
+         alert(encodeURIComponent(uri));  //会对所有的非标准字符进行编码
+
+         var uri="http%3A%2F&2Fwww.wro.com%2F.legal%20lu";
+         alert(decodeURI(uri));           //只对空格解码
+         alert(decodeURIComponent(uri));   // 对所有的编码进行解码*/
+
+
+
+        //2:eval()方法
+        /*eval("function sayhi() {alert('hi');}");
+        sayhi();*/
+
+        //3:window对象
+        /*var color="red";
+        function saycolor() {
+            alert("red");
+        }
+        window.saycolor();  */
+
+
+        //math对象
+        /*var max=Math.max(2,3,5,66,3,5);   //最大值
+        alert(max);
+        var min=Math.min(2,3,5,66,3,5);    //最小值
+        alert(min);
+
+        alert(Math.ceil(25.9));
+        alert(Math.ceil(25.5));
+        alert(Math.ceil(25.1));  //向上舍入  26
+
+        alert(Math.round(25.9));  //标准舍入  26
+        alert(Math.round(25.5)); //26
+        alert(Math.round(25.1));   //25
+
+        alert(Math.floor(25.9));
+        alert(Math.floor(25.5));
+        alert(Math.floor(25.1));  //向下舍入  25*/
+
+
+        //Math:random()将返回大于等于0小于1的随机数
+        var num=Math.floor(Math.random()*10+1);
+        alert(num);          //返回1到10 之间的数   总共有10个可能数 第一个可能的值是1
+        var num1=Math.floor(Math.random()*9+2);
+        alert(num1);          //返回2到10 之间的数   总共有9个可能数 第一个可能的值是2
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

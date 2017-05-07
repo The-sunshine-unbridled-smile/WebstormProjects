@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var image = document.getElementById('img')
+        EventUtil.addHandle(img , "load" ,function(event){
+            event = EvenUtil.getEvent(event);
+            alert(EventUtil.getTarget(event).src)
+        });
+
+    </script>
+</head>
+<body>
+<img src="../第13章 事件/tu7.jpg" id="img">
+</body>
+</html>

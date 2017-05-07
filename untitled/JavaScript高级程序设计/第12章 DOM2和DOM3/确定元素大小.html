@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确定元素大小</title>
+		<script type="text/javascript">
+			function getBoundClientRect(element){
+				var scrollToop=document.documentElement.scrllTop;
+				var scrollLeft=document.documentElement.scrollLeft;
+				if(element.getBoundingClientRect){
+					if(typeof arguments.callee.offset!="number"){
+						var temp=document.createElement("div");
+						temp.style.cssText="position: absolute;left: 0;top: 0;";
+						document.body.appendChild(temp);
+						arguments.callee.offset=-temp.getBoundingClientRect().top-scrollTop;
+						document.body.removeChild(temp);
+						temp=null;
+					}
+					var rect=element.getBoundingClientRect();
+					var offset=arguments.calle.offset;
+					return{
+						left:rect.left+offset,
+						right:rect.right+offset,
+						top:rect.top+offset,
+						bottom:rect.bottom+offset
+					};
+				}else{
+					var actualLeft=getElementLeft(element);
+					var actualTop=getElementTop(element);
+					return{
+						left:actualLeft-scrollLeft,
+						right:actualLeft+element.offsetWidth-scrollLeft,
+						top:actualTop-scrollTop,
+						bottom:actualTop+element.offsetHeight-scrollTop
+					}
+				}
+			}
+			alert("hello");
+			
+			
+			
+			
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<div  style="background-color: red;height: 200px;width: 200px;">
+			<pre>
+			 getBoundClientRect()函数在有效时使用这个原生方法；
+			 无效时使用默认的计算公式；
+			 使用了arguments.calle，这个方法不能再严格模式下使用
+			</pre>
+		</div>
+	</body>
+</html>

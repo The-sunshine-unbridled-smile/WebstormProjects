@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代方法</title>
+    <script type="text/javascript">
+
+        //every
+        /*var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        var everyResult = numbers.every(function (item, index, array) {
+            return item > 2;
+        });
+        alert(everyResult);//false*/
+
+        //some
+       /* var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        var someResult = numbers.some(function (item, index, array) {
+            return item > 2;
+        });
+        alert(someResult);//true*/
+
+        //filter
+        /*var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        var filterResult = numbers.filter(function (item, index, array) {
+            return item > 2;
+        });
+        alert(filterResult);//3,4,5,4,3*/
+
+        //map
+        var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        var mapResult = numbers.map(function (item, index, array) {
+            return item + 1;
+        });
+        alert(mapResult);//2,3,4,5,6,5,4,3,2
+
+        //forEach()执行某些操作 没有返回值
+    </script>
+</head>
+<body>
+
+</body>
+</html>

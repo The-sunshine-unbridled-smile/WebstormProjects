@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <script type="text/javascript">
+        function showContent() {
+            var myDiv,txtName,content;
+            with (document)[
+                myDiv = getElementById("myDiv"),
+                txtName = getElementById("txtName"),
+                content=getElementById("content"),
+        ]
+            alert(myDiv.innerHTML+"\n"+content.value+"\n"+txtName.value)
+        }
+    </script>
+</head>
+<body>
+<div id="myDiv">我的DIV</div>
+<textarea rows="5" cols="25" id="content">好好学习，天天向上</textarea>
+<br>
+<input type="text" id="txtName" value="123445">
+<br>
+<input type="button" value="显示上面的内容" onclick="showContent() ">
+
+</body>
+</html>

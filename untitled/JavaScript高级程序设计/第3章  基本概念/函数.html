@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>函数</title>
+    <script type="text/javascript">
+
+        /* function sum(num1 ,num2) {
+         return num1+num2;
+         alert("hello");//位于return语句之后的函数永远不会被执行
+         }
+         var result=sum(5,10);
+         alert(result);*/
+
+        //但是可以包含多个return语句
+        /*function diff(a, b) {
+            if (a < b) {
+                return b - a;
+            } else {
+                return a - b;
+            }
+        }
+        var c = diff(22, 10);
+        alert(c);*/
+
+
+        //理解参数
+        function doAdd() {
+            if(arguments.length==1){
+                alert(arguments[0]+10);
+            }else if(arguments.length==2){
+                alert(arguments[0]+arguments[1]);
+            }
+        }
+        doAdd(1);
+        doAdd(2,4);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

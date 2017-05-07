@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>标准的DOM监听事件</title>
+    <script type="text/javascript">
+        function show() {
+            alert("hello word");
+        }
+        window.onload=function () {
+            var test1=document.getElementById("test1");
+            var test2=document.getElementById("test2");
+            test1.addEventListener("click",show,false);
+            test2.onclick=function () {
+                test1.removeEventListener("click",show,false);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="测试1" id="test1">
+<button type="button" id="test2">测试2</button>
+
+</body>
+</html>
