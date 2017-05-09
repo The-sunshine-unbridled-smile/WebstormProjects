@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合成</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">hello canvas</canvas>
+
+<script type="text/javascript">
+
+    var drawing=document.getElementById("drawing");
+    if(drawing.getContext){   //确定浏览器是否支持<canvas>元素
+        var context=drawing.getContext("2d");
+        context.fillStyle="#ff0000";
+        context.fillRect(10,10,50,50);
+        context.globalCompositeOperation="destination-over";  //先绘制的图形在后绘制的上面
+
+        //context.globalAlpha=0.5;  //为后绘制的图形设置的透明度
+        context.fillStyle="blue"
+        context.fillRect(30,30,50,50);
+
+        }
+
+</script>
+</body>
+</html>
