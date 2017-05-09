@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this对象</title>
+    <script type="text/javascript">
+
+        var a={
+            a:"haha",
+            getA:function () {
+               console.log(this.a)
+            }
+        }
+        var b={
+            a:"hello"
+        }
+        var  getA=a.getA;
+        var getA2=getA.bind(a);
+        function run(fn) {
+            fn()
+        }
+        alert(a.getA());
+        alert(getA());
+        alert(run(a.getA));
+        alert(getA2.call(b));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
